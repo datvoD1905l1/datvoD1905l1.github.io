@@ -215,6 +215,13 @@ p {
 	width: 100px;
 }
 @media (max-width: 375px){
+	.header h3 {
+		font-size: 15px;
+		padding-left: 180px
+	}
+	.hinhanh img{
+		padding-top: 10px;
+	}
 	
 }
 
