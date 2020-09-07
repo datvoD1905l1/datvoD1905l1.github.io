@@ -13,9 +13,11 @@
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<script src= "jquery-2.1.4.min.js"></script>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
+	<button onClick="topFunction()" id="mybtn" title="On Top">Thanh Dat</button>
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">
   <img src="505px-Apple_logo_black.svg.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
@@ -43,13 +45,15 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-	<div class="wapper">
+	<div class="wapper" data-aos="fade-up-right">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 		<br><button>Pen Created By Avi Thour</button>
 		</div>
 	</div>
 			<div class="col">
+			  <div data-aos="fade-up">
 			<img src="images.jpg" class="juju"  alt="#" >
+			</div>
 			</div>
 	</div>
 	</div>
@@ -86,7 +90,7 @@
 		<p class="title"><strong>PORTPOLIO</strong></p>
 		</section>
 <div class="container">
-  <div class="hinhanh">
+  <div class="hinhanh" data-aos="fade-up-right">
 	  <div class="row">
 	  <div class="col">
 		  <img src="images (6).jpg" alt="#">
@@ -95,19 +99,19 @@
 		  <img src="images (5).jpg" alt="#">
 		  </div>
 		  <div class="col">
-		  <img class="hi" src="images (2).jpg" alt="#">
+		  <img class="hi" src="../môn dw/images (1).jpg" alt="#">
 		  </div>
 	  </div>
   </div>
 </div>
-	<div class="container hinhanh2">
+	<div class="container hinhanh2" data-aos="fade-up-right">
   <div class="hinhanh">
 	  <div class="row">
 	  <div class="col">
-		  <img src="images (6).jpg" alt="#">
+		  <img src="../môn dw/images.jpg" alt="#">
 		  </div>
 		  <div class="col">
-		  <img src="images (5).jpg" alt="#">
+		  <img src="../môn dw/download (1).jpg" alt="#">
 		  </div>
 		  <div class="col">
 		  <img class="hi" src="images (2).jpg" alt="#">
@@ -115,6 +119,22 @@
 	  </div>
   </div>
 </div>
+	<section>
+		<div class="container">
+			<div class="infor">
+		<div class="row">
+			<div class="col-lg-6">
+			<h2 >Experience</h2>
+				<p>2018 - 2020 Turpis metus sit diam purus leo in varius ac quam. Nunc amet tristique volutpat adipiscing vulputate phasellus. Eget enim aliquam euismod mauris in vitae viverra blandit lectus diam feugiat. Nunc amet tristique volutpat adipiscing vulputate phasellus. Eget enim aliquam.</p>
+			</div>
+			<div class="col-lg-6">
+			<h2>Cover letter</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra tristique placerat in massa consectetur quisque nunc fames.</p>
+			</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<section class="thongtin">
 	<h1>GET IN TOUCH</h1>
 	<p>This theme will look great on any device, no matter the size!</p>
@@ -153,6 +173,7 @@
 		</div>
 		</div>
 	</div>
+		
 	<section  class="footer">
 	<footer>
 	<div class="container">
@@ -179,5 +200,49 @@
 		</div>
 </footer>
 		</section>
-</body>
+	<script>
+	
+    //Get the button
+    var mybutton = document.getElementById("mybtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    
+	</script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+      AOS.init({
+        easing: 'ease-in-out-sine'
+      });
+
+      setInterval(addItem, 300);
+
+      var itemsCounter = 1;
+      var container = document.getElementById('aos-demo');
+
+      function addItem () {
+        if (itemsCounter > 42) return;
+        var item = document.createElement('div');
+        item.classList.add('aos-item');
+        item.setAttribute('data-aos', 'fade-up');
+        item.innerHTML = '<div class="aos-item__inner"><h3>' + itemsCounter + '</h3></div>';
+        container.appendChild(item);
+        itemsCounter++;
+      }
+    </script>
+</body>	
 </html>
